@@ -1,0 +1,59 @@
+plugins {
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
+}
+mainClassName = 'com.theinatorinator.pendejo.discord.bot.Main'
+
+version '1.0'
+
+group 'com.theinatorinator.pendejo'
+
+sourceCompatibility = targetCompatibility = 1.8
+
+
+repositories {
+    mavenCentral()
+    maven { // on kotlin dsl use `maven("https://m2.dv8tion.net/releases")` instead
+        url "https://m2.dv8tion.net/releases"
+    }
+    maven {
+        name 'm2-duncte123'
+        url 'https://m2.duncte123.dev/releases'
+    }
+    maven {
+        url "https://m2.chew.pro/releases"
+    }
+    maven {
+        url "https://m2.chew.pro/snapshots"
+    }
+    maven {
+        name 'm2-dv8tion'
+        url 'https://m2.dv8tion.net/releases'
+    }
+
+    maven {
+        name 'm2-duncte1234'
+        url 'https://m2.duncte123.dev'
+    }
+
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    implementation("net.dv8tion:JDA:5.0.0-alpha.9")
+    implementation('ch.qos.logback:logback-classic:1.2.11')
+    //implementation group: 'me.duncte123', name: 'botCommons', version: '2.3.14'
+    implementation 'pw.chew:jda-chewtils:2.0-SNAPSHOT'
+
+}
+shadowJar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}
+test {
+    useJUnitPlatform()
+}
+
+compileJava.options.encoding = 'UTF-8'
