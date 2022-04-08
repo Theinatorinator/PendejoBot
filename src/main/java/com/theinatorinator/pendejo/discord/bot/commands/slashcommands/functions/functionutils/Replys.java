@@ -1,5 +1,7 @@
 package com.theinatorinator.pendejo.discord.bot.commands.slashcommands.functions.functionutils;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -21,7 +23,7 @@ public class Replys {
     /**
      * @param args The list of reply that you want to be said
      */
-    public Replys(String... args) {
+    public Replys(String @NotNull ... args) {
         for (int i = 0; i < args.length; i++) {
             jokes.put(i, args[i]);
             totalJokes = i;
@@ -42,7 +44,7 @@ public class Replys {
      * @return returns a random Reply from the list passed in the args of the constructor
      */
     public String RandomReply() {
-        int randomNum = random.nextInt(totalJokes);
+        int randomNum = random.nextInt(totalJokes + 1);
         String joke = jokes.get(randomNum);
         System.out.println(joke);
         return joke;

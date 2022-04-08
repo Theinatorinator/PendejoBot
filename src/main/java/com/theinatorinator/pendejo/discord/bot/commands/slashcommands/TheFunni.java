@@ -2,12 +2,13 @@ package com.theinatorinator.pendejo.discord.bot.commands.slashcommands;
 
 import com.jagrosh.jdautilities.command.SlashCommand;
 import com.jagrosh.jdautilities.command.SlashCommandEvent;
+import com.theinatorinator.pendejo.discord.bot.commands.slashcommands.functions.TheFunnyFunction;
 import com.theinatorinator.pendejo.discord.bot.commands.slashcommands.slashutils.SlashCommandUtils;
 import org.jetbrains.annotations.NotNull;
 
 public class TheFunni extends SlashCommand {
+    TheFunnyFunction theFunnyFunction = new TheFunnyFunction();
     SlashCommandUtils slashCommandUtils = new SlashCommandUtils();
-
     public TheFunni() {
         this.name = "funni";
         this.help = "its a funni";
@@ -19,7 +20,8 @@ public class TheFunni extends SlashCommand {
 
     @Override
     public void execute(@NotNull SlashCommandEvent event) {
+        slashCommandUtils.IncreaseCommandCount();
         event.reply("jajaja").queue();
-        slashCommandUtils.TheFunniCall(event.getChannel());
+        theFunnyFunction.PingEveryone(event.getChannel(), 10);
     }
 }

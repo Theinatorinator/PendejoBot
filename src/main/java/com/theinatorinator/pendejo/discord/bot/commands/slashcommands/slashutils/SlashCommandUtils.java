@@ -1,9 +1,6 @@
 package com.theinatorinator.pendejo.discord.bot.commands.slashcommands.slashutils;
 
-import com.theinatorinator.pendejo.discord.bot.commands.slashcommands.functions.JokesFunction;
-import com.theinatorinator.pendejo.discord.bot.commands.slashcommands.functions.RandomCopyPastaFunction;
-import com.theinatorinator.pendejo.discord.bot.commands.slashcommands.functions.TheFunnyFunction;
-import net.dv8tion.jda.api.entities.MessageChannel;
+import com.theinatorinator.pendejo.discord.bot.Main;
 
 /**
  * This class is where you put all the command call methods, in you command you should reply to the command and call a method from this class
@@ -11,20 +8,15 @@ import net.dv8tion.jda.api.entities.MessageChannel;
  * This will keep the command classes rather clean and empty
  */
 public class SlashCommandUtils {
-    TheFunnyFunction funnyUtil = new TheFunnyFunction();
-    JokesFunction jokesFunctions = new JokesFunction();
-    RandomCopyPastaFunction randomCopyPastaFunction = new RandomCopyPastaFunction();
 
-    public void TheFunniCall(MessageChannel channel) {
-        Thread t = new Thread(() -> funnyUtil.PingEveryone(channel, 10));
-        t.start();
+    public int TotalCommandCount() {
+        return Main.getTotalRunCount();
     }
 
-    public String JokeCall() {
-        return jokesFunctions.RandomJoke();
+    public void IncreaseCommandCount() {
+        Main.IncreaseTotalRunCount();
+        System.out.println(Main.getTotalRunCount());
     }
 
-    public String RandomCopyPastaCall() {
-        return randomCopyPastaFunction.RandomCopyPasta();
-    }
+
 }

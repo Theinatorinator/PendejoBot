@@ -1,5 +1,7 @@
 package com.theinatorinator.pendejo.discord.bot.keywords.keywordfunctions.keywordutils;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -15,7 +17,7 @@ public class Keywords {
     /**
      * @param args pass in the keywords that you want to be checked against, this wil simply return true if they are in the list passed in the args
      */
-    public Keywords(String... args) {
+    public Keywords(String @NotNull ... args) {
         for (int i = 0; i < args.length; i++) {
             keywords.put(i, args[i]);
         }
