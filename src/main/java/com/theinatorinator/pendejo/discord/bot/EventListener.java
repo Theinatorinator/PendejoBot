@@ -1,25 +1,31 @@
 package com.theinatorinator.pendejo.discord.bot;
 
-import com.theinatorinator.pendejo.discord.bot.commands.CommandUtils;
+import com.theinatorinator.pendejo.discord.bot.keywords.keywordfunctions.KeywordReply;
+import com.theinatorinator.pendejo.discord.bot.keywords.keywordfunctions.keywordutils.Keywords;
 import net.dv8tion.jda.api.entities.Message;
-import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
-import java.util.Random;
+
+import java.util.Locale;
 
 
 public class EventListener extends ListenerAdapter {
+    KeywordReply keywordReply = new KeywordReply();
+    final Keywords keywords = new Keywords(
+            "PENDEJO",
+            "JAJAJA",
+            "WATSON"
+    );
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
-        CommandUtils commandUtils = new CommandUtils();
-
         Message msg = event.getMessage();
         User user = event.getAuthor();
-        if (msg.getContentRaw().equals("pendejo")) {
-            commandUtils.PendejoReply(user.getIdLong(), event.getChannel(), 0.5);
-        }
+        String rawMsgContent = msg.getContentRaw().toUpperCase(Locale.ROOT);
+
+        if (!keywords.IsValid(rawMsgContent)) return;
+        keywordReply.CheckKeyword(user.getIdLong(), event.getChannel(), rawMsgContent);
     }
 }
