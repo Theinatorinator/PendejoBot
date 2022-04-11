@@ -1,6 +1,7 @@
 plugins {
     id 'application'
     id 'com.github.johnrengelman.shadow' version '7.0.0'
+    id 'com.bmuschko.docker-remote-api' version '7.3.0'
 }
 mainClassName = 'com.theinatorinator.pendejo.discord.bot.Main'
 
@@ -8,7 +9,6 @@ version '1.0'
 
 group 'com.theinatorinator.pendejo'
 
-sourceCompatibility = targetCompatibility = 1.8
 
 
 repositories {
@@ -43,11 +43,11 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
     implementation("net.dv8tion:JDA:5.0.0-alpha.9")
     implementation('ch.qos.logback:logback-classic:1.2.11')
-    //implementation group: 'me.duncte123', name: 'botCommons', version: '2.3.14'
     implementation 'pw.chew:jda-chewtils:2.0-SNAPSHOT'
 
 }
 shadowJar {
+    //noinspection GroovyAssignabilityCheck
     manifest {
         attributes 'Main-Class': mainClassName
     }

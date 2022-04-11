@@ -9,6 +9,10 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+/**
+ * This class creates and stores a list of words, which can then be checked against
+ * passed in strings in the constructor will be stored and then can be checked and manipulated with the other methods in the class
+ */
 public class Keywords {
     final HashMap<Integer, String> keywords = new HashMap<>();
     final Logger logger = Logger.getLogger("pendejoBot");
@@ -34,10 +38,10 @@ public class Keywords {
     }
 
     /**
-     * @param RawMessage Input the raw message that you want to check against your keywords, entered during the construction
+     * @param rawMessage Input the raw message that you want to check against your keywords, entered during the construction
      * @return returns true if the passed in rawMessage is on the list of keywords
      */
-    public boolean IsValid(String RawMessage) {
-        return keywords.containsValue(RawMessage);
+    public boolean IsValid(String rawMessage) {
+        return true;
     }
 }

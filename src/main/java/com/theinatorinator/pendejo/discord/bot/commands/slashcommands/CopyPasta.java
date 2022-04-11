@@ -6,9 +6,17 @@ import com.theinatorinator.pendejo.discord.bot.commands.slashcommands.functions.
 import com.theinatorinator.pendejo.discord.bot.commands.slashcommands.slashutils.SlashCommandUtils;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * This class is a simple slash command to return a random copy-pasta
+ */
 public class CopyPasta extends SlashCommand {
     RandomCopyPastaFunction randomCopyPastaFunction = new RandomCopyPastaFunction();
     SlashCommandUtils slashCommandUtils = new SlashCommandUtils();
+
+    /**
+     * The class consroctour, which assigns traits of the command
+     * mor documentation can be found from the extended SlashCommand
+     */
     public CopyPasta() {
         this.name = "randomcopypasta";
         this.help = "Get a random Copy Pasta";

@@ -6,15 +6,24 @@ import com.theinatorinator.pendejo.discord.bot.commands.slashcommands.functions.
 import com.theinatorinator.pendejo.discord.bot.commands.slashcommands.slashutils.SlashCommandUtils;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * class for a command that pings everyone multiple times with pendejo
+ */
 public class TheFunni extends SlashCommand {
     TheFunnyFunction theFunnyFunction = new TheFunnyFunction();
     SlashCommandUtils slashCommandUtils = new SlashCommandUtils();
+
+    /**
+     * The command constructor as detailed in the SlashCommand docs
+     */
     public TheFunni() {
         this.name = "funni";
         this.help = "its a funni";
-        this.userMissingPermMessage = "WHO THE FRICK TOLD YOU TO DO THIS, GO DO SOMETHING ELSE";
+        this.userMissingPermMessage = "Get yo hands off this commands";
         this.defaultEnabled = false;
-        this.enabledRoles = new String[]{"959660073678958602", "961816854102442095"};
+        //allow the reddit mods role in the apex circle jerk server to use this command
+        this.enabledRoles = new String[]{"959660073678958602"};
+        //allow me to use this command
         this.enabledUsers = new String[]{"717398795746279476"};
     }
 

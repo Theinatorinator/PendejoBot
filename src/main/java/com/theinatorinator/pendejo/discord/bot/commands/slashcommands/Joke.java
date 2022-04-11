@@ -6,9 +6,16 @@ import com.theinatorinator.pendejo.discord.bot.commands.slashcommands.functions.
 import com.theinatorinator.pendejo.discord.bot.commands.slashcommands.slashutils.SlashCommandUtils;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * This class makes a slash command to return a random joke
+ */
 public class Joke extends SlashCommand {
     JokesFunction jokesFunction = new JokesFunction();
     SlashCommandUtils slashCommandUtils = new SlashCommandUtils();
+
+    /**
+     * This Constructor sets up the command based on the extended SlashCommand class
+     */
     public Joke() {
         this.name = "joke";
         this.help = "tells you a joke";

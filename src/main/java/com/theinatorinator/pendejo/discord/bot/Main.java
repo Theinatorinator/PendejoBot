@@ -10,15 +10,29 @@ import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.EnumSet;
-
+/**
+ * The main class
+ */
 public class Main {
     static int totalRunCount = 0;
 
-    public static void main(String @NotNull [] args) throws Exception {
-        RegisterAndConnect(args[0], args[1], args[2]);
+    /**
+     * @param args the args of the program, the format is token, followed by the guild id, followed by the owner id, followed by the @everyone perms id
+     */
+    public static void main(String @NotNull [] args) {
+        try {
+            RegisterAndConnect(args[0], args[1], args[2]);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
+    /**
+     * @param token   the api token
+     * @param guildId the guild id for the server this bot should be in
+     * @param ownerId the owner id for this bot
+     * @throws Exception all exceptions get pushed back to the call in the main method
+     */
     public static void RegisterAndConnect(String token, @NotNull String guildId, String ownerId) throws Exception {
         CommandClientBuilder builder = new CommandClientBuilder();
 
@@ -26,14 +40,15 @@ public class Main {
             throw new Exception("guild id is not PASSED IN, you must pass in -a if you do not want to limit guilds");
         if (ownerId.isEmpty()) throw new Exception("YOU MUST PASS IN A VALID GUILD ID TO CONTINUE");
 
-        if (!guildId.matches("-a")) {
-            try {
-                builder.forceGuildOnly(guildId);
-            } catch (Exception e) {
-                System.out.println("INVALID GUILD ID");
-                e.printStackTrace();
-            }
+
+        try {
+            builder.forceGuildOnly(guildId);
+
+        } catch (Exception e) {
+            System.out.println("INVALID GUILD ID");
+            e.printStackTrace();
         }
+
         try {
             builder.setOwnerId(ownerId);
         } catch (Exception e) {
@@ -59,7 +74,10 @@ public class Main {
         JDA jda = JDABuilder
                 .create(
                         token,
-                        EnumSet.allOf(GatewayIntent.class)
+                        GatewayIntent.GUILD_MESSAGES,
+                        GatewayIntent.GUILD_MEMBERS,
+                        GatewayIntent.GUILD_MESSAGE_REACTIONS,
+                        GatewayIntent.GUILD_MESSAGE_TYPING
                 )
                 //register all of your event listeners here
                 .addEventListeners(
@@ -84,10 +102,17 @@ public class Main {
         t.start();
     }
 
+    /**
+     * @return returns the total number of time a command has been sent
+     * note: the commands must be counted using the increasetotalruncount method
+     */
     public static int getTotalRunCount() {
         return totalRunCount;
     }
 
+    /**
+     * increases the total run commands count by 1
+     */
     public static void IncreaseTotalRunCount() {
         totalRunCount++;
     }

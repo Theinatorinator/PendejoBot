@@ -23,6 +23,9 @@ public class JokesFunction {
             "tittyfall"
     );
 
+    /**
+     * @return This function reply's with a random joke from the list of jokes passed in constructor
+     */
     public String RandomJoke() {
         return replys.RandomReply();
     }

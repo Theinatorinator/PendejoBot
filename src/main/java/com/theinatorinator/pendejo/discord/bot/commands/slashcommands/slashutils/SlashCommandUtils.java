@@ -9,14 +9,18 @@ import com.theinatorinator.pendejo.discord.bot.Main;
  */
 public class SlashCommandUtils {
 
+    /**
+     * @return returns the current run command count
+     */
     public int TotalCommandCount() {
         return Main.getTotalRunCount();
     }
 
+    /**
+     * Increases the run command count
+     */
     public void IncreaseCommandCount() {
         Main.IncreaseTotalRunCount();
         System.out.println(Main.getTotalRunCount());
     }
-
-
 }

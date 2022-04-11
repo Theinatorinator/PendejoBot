@@ -9,7 +9,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Locale;
 
-
+/**
+ * This is an event listener, specifically targeted at keywords
+ */
 public class KeywordEventListener0 extends ListenerAdapter {
     KeywordReply keywordReply = new KeywordReply();
 

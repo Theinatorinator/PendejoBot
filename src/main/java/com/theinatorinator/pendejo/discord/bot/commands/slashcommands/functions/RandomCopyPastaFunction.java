@@ -2,6 +2,10 @@ package com.theinatorinator.pendejo.discord.bot.commands.slashcommands.functions
 
 import com.theinatorinator.pendejo.discord.bot.commands.slashcommands.functions.functionutils.Replys;
 
+/**
+ * The functions nad backend of the random copy-pasta command
+ * all the copy-pastas are declared here
+ */
 public class RandomCopyPastaFunction {
 
     final Replys replys = new Replys(
@@ -11,27 +15,36 @@ public class RandomCopyPastaFunction {
 
             "God, I wish Wattson was actually real. Everyday I daydream about coming home after a long, stresfull day at work and start beating the shit out of her, while our child looks in horror.I daydream about coming home after a night of drinking with the lads and slapping the everliving crap out of her dumbass face, while maimg puns. But no, I don't even have a job, nor am I old enough to drink(like that will stop me) and I have to take it all out on my little brother instead of a dumbass ugly French waifu.\n",
 
-            "AITA for killing a Wattson in my game?\n" +
-                    "\n" +
-                    "I'm gonna preface this with an introduction. I am a 38 year old Caustic main. I've played the game since day 1, and even though I can only play a few hours a week (wife, 3 kids), I would say I'm pretty good at the game (0.48 KDR). I love Wattson players. They are super wholesome, never DC, and like to bunker down and camp with me.\n" +
-                    "\n" +
-                    "The other day, I was playing some Apex, and I decided to make a risky play and land at Orbital Cannon. After around 5 minutes of looting (and both of my teammates (Octane and Wraith) DCing after hotdropping), I started moving out, when I noticed a Wattson in the next room (please fix footsteps)! I ran up to her with my RE-45 and cracked her. She started tap-strafing everywhere so I threw my gas grenade and 3 gas canister and she eventually got knocked. Seeing that it seemed like she was a solo, I used a finisher on her. I was pretty happy as it was my first kill since yesterday, but then as time went on I started feeling bad (post gas clarity if you will). I realized I probably ruined that Wattson's day, and since I know how wholesome they are, I just can't get over it. On the other hand, it was my first kill in 5 games and I went on to get a record 4 kills that match. So Reddit, am I the asshole?",
+            """
+                    AITA for killing a Wattson in my game?
 
-            "wow, wespawn. y-you c-committed t-the uwtimate cawdinaw sin, you got pewsonaw (o▽o) you, as a team of pwofessionaws twying to make m-money, got pewsonaw-.- you got pewsonaw a-and d-decided to i-insuwt youw pwaybase.. cawwing us \" boi pussy -hats\" a-and \"fweewoadews\". not a wise m-move.\n" +
-                    "\n" +
-                    "we won't fowget this. you've set a new tone fow t-the k-kind of i-intewaction w-we'll b-be having with y-you :･ﾟ✧:･ﾟ✧ i-it's a cowd one. one where there awen't any iwwusions a-about the weawity of the s-situation. pwevious notions of \"famiwy\" are dead. we are m-mere consumers to you, and that is obvious.\n" +
-                    "\n" +
-                    "you h-have chosen to b-bwing in a new ewa of hostiwity and b-bittewness. well done〜☆ g-gweat pw move :･ﾟ✧:･ﾟ✧\n",
+                    I'm gonna preface this with an introduction. I am a 38 year old Caustic main. I've played the game since day 1, and even though I can only play a few hours a week (wife, 3 kids), I would say I'm pretty good at the game (0.48 KDR). I love Wattson players. They are super wholesome, never DC, and like to bunker down and camp with me.
 
-            "Holy fucking shit. I want to bang Wattson from Apex Legends so goddamn bad. I can't stand it anymore. Every time I load up the game I get a massive erection. I've seen literally every r/apexlegends_porn post there is of her. My dreams are nothing but constant fucking sex with Wattson. I'm sick of waking up every morning with six nuts in my boxers and knowing that those are nuts that should've been busted inside of Wattson's tight french pussy. I want her to have my mutant human/french babies.\n" +
-                    "\n" +
-                    "Fuck, my fucking mom caught me with the baguette from the kitchen counter. I dressed it in my sister's skirt and went to fucking town. She hasn't said a word to me in 10 hours and I'm worried she's gonna take away my PC. I might not ever get to see Wattson. Im scared\n" +
-                    "If you play Rev, you admit you suck at the game, especially with how he is now.",
+                    The other day, I was playing some Apex, and I decided to make a risky play and land at Orbital Cannon. After around 5 minutes of looting (and both of my teammates (Octane and Wraith) DCing after hotdropping), I started moving out, when I noticed a Wattson in the next room (please fix footsteps)! I ran up to her with my RE-45 and cracked her. She started tap-strafing everywhere so I threw my gas grenade and 3 gas canister and she eventually got knocked. Seeing that it seemed like she was a solo, I used a finisher on her. I was pretty happy as it was my first kill since yesterday, but then as time went on I started feeling bad (post gas clarity if you will). I realized I probably ruined that Wattson's day, and since I know how wholesome they are, I just can't get over it. On the other hand, it was my first kill in 5 games and I went on to get a record 4 kills that match. So Reddit, am I the asshole?""",
+
+            """
+                    wow, wespawn. y-you c-committed t-the uwtimate cawdinaw sin, you got pewsonaw (o▽o) you, as a team of pwofessionaws twying to make m-money, got pewsonaw-.- you got pewsonaw a-and d-decided to i-insuwt youw pwaybase.. cawwing us " boi pussy -hats" a-and "fweewoadews". not a wise m-move.
+
+                    we won't fowget this. you've set a new tone fow t-the k-kind of i-intewaction w-we'll b-be having with y-you :･ﾟ✧:･ﾟ✧ i-it's a cowd one. one where there awen't any iwwusions a-about the weawity of the s-situation. pwevious notions of "famiwy" are dead. we are m-mere consumers to you, and that is obvious.
+
+                    you h-have chosen to b-bwing in a new ewa of hostiwity and b-bittewness. well done〜☆ g-gweat pw move :･ﾟ✧:･ﾟ✧
+                    """,
+
+            """
+                    Holy fucking shit. I want to bang Wattson from Apex Legends so goddamn bad. I can't stand it anymore. Every time I load up the game I get a massive erection. I've seen literally every r/apexlegends_porn post there is of her. My dreams are nothing but constant fucking sex with Wattson. I'm sick of waking up every morning with six nuts in my boxers and knowing that those are nuts that should've been busted inside of Wattson's tight french pussy. I want her to have my mutant human/french babies.
+
+                    Fuck, my fucking mom caught me with the baguette from the kitchen counter. I dressed it in my sister's skirt and went to fucking town. She hasn't said a word to me in 10 hours and I'm worried she's gonna take away my PC. I might not ever get to see Wattson. Im scared
+                    If you play Rev, you admit you suck at the game, especially with how he is now.""",
 
             "I don't care if you played it before, I don't care if you dry hump the lore in Apex, Rev is a complete exploit right now."
 
     );
 
+    /**
+     * This method is used for getting a random copy pasta
+     *
+     * @return returns a random copy pasta from the delayered list in the "RandomCopyPastaFunction" class
+     */
     public String RandomCopyPasta() {
         return replys.RandomReply();
     }

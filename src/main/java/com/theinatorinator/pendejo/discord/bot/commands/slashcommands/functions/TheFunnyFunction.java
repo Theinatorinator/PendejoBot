@@ -2,6 +2,9 @@ package com.theinatorinator.pendejo.discord.bot.commands.slashcommands.functions
 
 import net.dv8tion.jda.api.entities.MessageChannel;
 
+/**
+ * function/backend for the funny function
+ */
 public class TheFunnyFunction {
 
     /**
