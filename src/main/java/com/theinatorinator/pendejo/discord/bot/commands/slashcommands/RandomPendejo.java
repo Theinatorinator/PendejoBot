@@ -24,9 +24,7 @@ public class RandomPendejo extends SlashCommand {
     @Override
     protected void execute(@NotNull SlashCommandEvent event) {
         slashCommandUtils.IncreaseCommandCount();
-        int times = Integer.parseInt(this.arguments);
-
         event.reply("certified jajaja moment").queue();
-        randomPendejoFunction.SayRandomPendejo(event.getChannel(), times, 6000);
+        randomPendejoFunction.SayRandomPendejo(event.getChannel(), 10, 60000);
     }
 }

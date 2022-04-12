@@ -20,11 +20,11 @@ public class TheFunni extends SlashCommand {
         this.name = "funni";
         this.help = "its a funni";
         this.userMissingPermMessage = "Get yo hands off this commands";
-        this.defaultEnabled = false;
+        this.defaultEnabled = true;
         //allow the reddit mods role in the apex circle jerk server to use this command
         this.enabledRoles = new String[]{"959660073678958602"};
         //allow me to use this command
-        this.enabledUsers = new String[]{"717398795746279476"};
+        this.enabledUsers = new String[]{"717398795746279476", "221313820847636491"};
     }
 
     @Override

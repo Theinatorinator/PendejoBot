@@ -44,6 +44,9 @@ dependencies {
     implementation("net.dv8tion:JDA:5.0.0-alpha.9")
     implementation('ch.qos.logback:logback-classic:1.2.11')
     implementation 'pw.chew:jda-chewtils:2.0-SNAPSHOT'
+    // https://mvnrepository.com/artifact/com.thoughtworks.xstream/xstream
+    implementation group: 'com.thoughtworks.xstream', name: 'xstream', version: '1.4.19'
+
 
 }
 shadowJar {

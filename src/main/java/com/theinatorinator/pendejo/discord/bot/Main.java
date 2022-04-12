@@ -6,51 +6,59 @@ import com.theinatorinator.pendejo.discord.bot.commands.slashcommands.*;
 import com.theinatorinator.pendejo.discord.bot.eventlisteners.KeywordEventListener0;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
-import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import org.jetbrains.annotations.NotNull;
+
+import java.io.IOException;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 /**
  * The main class
  */
 public class Main {
     static int totalRunCount = 0;
+    static JDA jda;
+    static final Logger logger = Logger.getLogger("pendejoBot");
+    static FileHandler fh;
 
     /**
      * @param args the args of the program, the format is token, followed by the guild id, followed by the owner id, followed by the @everyone perms id
      */
     public static void main(String @NotNull [] args) {
         try {
-            RegisterAndConnect(args[0], args[1], args[2]);
+            RegisterAndConnect(args[0], args[1]);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        try {
+            fh = new FileHandler("C:/temp/test/pendejoBot.log");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        logger.addHandler(fh);
+        SimpleFormatter formatter = new SimpleFormatter();
+        fh.setFormatter(formatter);
     }
 
     /**
      * @param token   the api token
      * @param guildId the guild id for the server this bot should be in
-     * @param ownerId the owner id for this bot
      * @throws Exception all exceptions get pushed back to the call in the main method
      */
-    public static void RegisterAndConnect(String token, @NotNull String guildId, String ownerId) throws Exception {
+    public static void RegisterAndConnect(String token, @NotNull String guildId) throws Exception {
         CommandClientBuilder builder = new CommandClientBuilder();
-
-        if (guildId.isEmpty())
-            throw new Exception("guild id is not PASSED IN, you must pass in -a if you do not want to limit guilds");
-        if (ownerId.isEmpty()) throw new Exception("YOU MUST PASS IN A VALID GUILD ID TO CONTINUE");
-
-
-        try {
-            builder.forceGuildOnly(guildId);
-
-        } catch (Exception e) {
-            System.out.println("INVALID GUILD ID");
-            e.printStackTrace();
-        }
+//        try {
+//            builder.forceGuildOnly(guildId);
+//
+//        } catch (Exception e) {
+//            System.out.println("INVALID GUILD ID");
+//            e.printStackTrace();
+//        }
 
         try {
-            builder.setOwnerId(ownerId);
+            builder.setOwnerId("717398795746279476");
         } catch (Exception e) {
             System.out.println("ERROR, INVALID OWNER ID");
             e.printStackTrace();
@@ -66,40 +74,36 @@ public class Main {
                 new RandomPendejo(),
                 new TotalRunCommandsCount()
         );
-
-
+        //Makes a command handler
         CommandClient commandClient = builder.build();
-
-
-        JDA jda = JDABuilder
+        //build the jda instance
+        jda = JDABuilder
+                //token, and intents, don't change intents without updating your sharing links and intentions in the discord developer portal
                 .create(
                         token,
                         GatewayIntent.GUILD_MESSAGES,
                         GatewayIntent.GUILD_MEMBERS,
                         GatewayIntent.GUILD_MESSAGE_REACTIONS,
-                        GatewayIntent.GUILD_MESSAGE_TYPING
+                        GatewayIntent.GUILD_MESSAGE_TYPING,
+                        GatewayIntent.DIRECT_MESSAGES,
+                        GatewayIntent.DIRECT_MESSAGE_TYPING
                 )
                 //register all of your event listeners here
                 .addEventListeners(
-                        new KeywordEventListener0(),
+                        new KeywordEventListener0()
+                )
+                //Don't touch any of this
+                .addEventListeners(
                         commandClient
                 )
                 .setContextEnabled(true)
                 .build();
+        //touching allowed again
 
-        jda.getPresence().setPresence(Activity.playing("your mom"), false);
-
-        Thread t = new Thread(() -> {
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            //set the bots activity
-            jda.getPresence().setPresence(Activity.watching("Your mom"), false);
-        });
-
-        t.start();
+        jda.awaitReady();
+        logger.info("Connected and online!");
+        RandomStatus randomStatus = new RandomStatus(jda);
+        randomStatus.MainFunction();
     }
 
     /**
@@ -116,4 +120,9 @@ public class Main {
     public static void IncreaseTotalRunCount() {
         totalRunCount++;
     }
+
+    public static JDA GetJDA() {
+        return jda;
+    }
+
 }
