@@ -121,8 +121,5 @@ public class Main {
         totalRunCount++;
     }
 
-    public static JDA GetJDA() {
-        return jda;
-    }
 
 }

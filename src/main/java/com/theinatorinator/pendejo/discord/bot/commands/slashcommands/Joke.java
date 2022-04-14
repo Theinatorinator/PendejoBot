@@ -19,7 +19,7 @@ public class Joke extends SlashCommand {
     public Joke() {
         this.name = "joke";
         this.help = "tells you a joke";
-        this.userMissingPermMessage = "Go do something else";
+        this.userMissingPermMessage = "Go do something else, you're not funny enough to use this command!";
     }
 
     @Override

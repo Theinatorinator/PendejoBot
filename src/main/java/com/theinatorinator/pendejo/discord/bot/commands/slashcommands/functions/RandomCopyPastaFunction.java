@@ -58,8 +58,6 @@ public class RandomCopyPastaFunction {
 
             //NEXT
 
-            "ok guys. i’m no scientist nor specialist in any of this, but via extensive research i have come to the conclusion that pathfinder might be a viable alternative to van darkholme for fisting. van darkholme is known for his presence in multiple gay pornography movies. one of his famous lines comes from the movie “101 rent boys”, a documentary about male prostitutes in california. in this movie, he says “fisting is 300 bucks”. now lets look at pathfinder. according to some lore released by respawn, pathfinder does any kind of labor for free, meaning that he would fist someone for free. many people would take free fisting over 300 buck fisting. however, pathfinder and van darkholme are very different, as one is a mere robot and the other is a human prostitute experienced in sexual acts and bdsm related things. i think you would want a more smoother hand up your ass rather than a metallic and rough hand from an amateur. anyways this marks the end of my essay. i hope you enjoyed reading this.",
-
             //NEXT
 
             """

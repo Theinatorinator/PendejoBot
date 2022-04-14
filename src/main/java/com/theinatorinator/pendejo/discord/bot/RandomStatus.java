@@ -5,13 +5,22 @@ import net.dv8tion.jda.api.entities.Activity;
 
 import java.util.Random;
 
+/**
+ * @author Theinator Randomly sets the satus to a random activity, this also acts a keep alive for the bot
+ */
 public class RandomStatus {
     JDA jda;
 
+    /**
+     * @param jda the JDA instance
+     */
     public RandomStatus(JDA jda) {
         this.jda = jda;
     }
 
+    /**
+     * Starts the random status thread, where every so often it will change the status
+     */
     public void MainFunction() {
         this.jda.getPresence().setPresence(Activity.listening("to systems boot"), false);
         Thread t = new Thread(() -> {
